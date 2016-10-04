@@ -1,0 +1,122 @@
+
+<!-- vista de productos -->
+<h1>Productos</h1>
+
+<!--{{mensaje}} -->
+
+<!-- <input type="text" ng-model="mensaje" class="form-control" /> -->
+
+
+<!-- <button ng-click="verMensaje();" class="btn btn-primary">Ver</button> -->
+
+<!-- {{productos}} -->
+
+
+<!-- Lista Productos -->
+<ul>
+	<li ng-repeat="producto in productos">
+		<b>Nombre: </b>
+		{{producto.nombre}}
+
+		<br/>
+		<b>Precio: </b>
+		{{producto.precio}}
+
+	</li>
+
+</ul>
+
+<!-- Tabla Productos -->
+<table class="table">
+	
+	<thead>
+		<th>
+			Nombre
+		</th>	
+		<th>
+			Precio
+		</th>	
+	</thead>
+
+	<tbody>
+		
+		<tr ng-repeat="producto in productos">
+
+			<td>{{producto.nombre}}</td>
+			
+			<td>{{producto.precio}}</td>
+
+			<td>
+				<button ng-click="verProducto(producto)" class="btn btn-info">
+					Ver
+				</button>
+			</td>
+
+		</tr>
+
+
+	</tbody>
+
+
+
+</table>
+
+
+
+<!-- Producto Actual -->
+<h4>Producto Actual</h4>
+
+<!--{{productoActual}} -->
+
+<!-- si el produco actual esta definido -->
+<div ng-show="productoActual != undefined">
+
+	<label>
+		Nombre:
+	</label>
+	{{productoActual.nombre}}
+
+
+	<label>
+		Precio
+	</label>
+	{{productoActual.precio}}
+
+</div>
+
+<!-- si el produco actual no esta definido -->
+<div ng-show="productoActual == undefined">
+
+	No ha ningun producto para mostrar
+
+</div>
+
+
+
+<h4>Agregar Producto</h4>
+
+<form>
+	
+	<label>Nombre:</label>
+	<input type="text" ng-model="nuevoProducto.nombre" class="form-control" />
+
+	<label>Precio:</label>
+	<input type="number" ng-model="nuevoProducto.precio" class="form-control" />
+
+	<button ng-click="agregarProducto();" class="btn btn-primary">Nuevo</button>
+</form> 
+
+
+
+<!-- {{nuevoProducto}} -->
+
+
+
+
+
+
+
+
+
+
+
